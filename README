@@ -1,0 +1,20 @@
+This project is a VIM config Python
+source : Linux Magazine Hors Serie 59, mars 2012
+
+installation :
+    git clone git://github.com/wjeanneau/dotvim.git ~/.vim
+
+create symlink
+    ln -s ~/.vim/vimrc ~/.vimrc
+
+install package
+    sudo apt-get install git pep8 exuberant-ctags
+    sudo easy_install -U pytest
+
+switch to ~/.vim
+
+    cd ~/.vim
+    git submodule init
+    git submodule update
+    git submodule foreach git submodule init
+    git submodule foreach git submodule update
