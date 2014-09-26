@@ -13,6 +13,9 @@ filetype on
 filetype plugin indent on
 " longeur maximale des lignes
 set textwidth=79
+autocmd BufRead *.py,*.agi set textwidth=79
+" Surligne la derniere colonne du dernier caractere autorise par testwidth
+autocmd BufRead *.py,*.agi set cc=+1
 " Activation de la couleur
 syntax on
 " Mode fond d'ecran sombre 
@@ -44,11 +47,10 @@ endfunction
 " supprime les carateres ^M en fin de ligne
 function! CleanCode()
     %retab
-    %s/^M//g
+    %s/[ ]*$//g
+    silent! %s/^M$//g
     call s:DisplayStatus('Code clean')
 endfunction
 " Affichage des numero de ligne
 set number
 highlight LineNr ctermbg=blue ctermfg=gray
-" Surligne la derniere colonne du dernier caractere autorise par testwidth
-set cc=+1
