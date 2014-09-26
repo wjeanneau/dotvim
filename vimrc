@@ -46,8 +46,8 @@ endfunction
 " supprime les carateres ^M en fin de ligne
 function! CleanCode()
     %retab
-    %s/[ ]*$//g
-    silent! %s/^M$//g
+    s/[ \t]*$//g
+    silent! s/^M$//g
     call s:DisplayStatus('Code clean')
 endfunction
 " Affichage des numero de ligne
