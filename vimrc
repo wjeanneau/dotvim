@@ -12,7 +12,6 @@ set tabstop=8
 filetype on
 filetype plugin indent on
 " longeur maximale des lignes
-set textwidth=79
 autocmd BufRead *.py,*.agi set textwidth=79
 " Surligne la derniere colonne du dernier caractere autorise par testwidth
 autocmd BufRead *.py,*.agi set cc=+1
